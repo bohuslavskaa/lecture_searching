@@ -18,10 +18,18 @@ def read_data(file_name, field):
         else:
             return None
 
+def linear_search(sekvence, cislo):
+    slovnik = {"positions": [], "count": 0}
+    for idx, i in enumerate(sekvence):
+        if i == cislo:
+            slovnik["positions"].append(idx)
+            slovnik["count"] += 1
+    return slovnik
 def main():
     file_name = 'sequential.json'
     seq = read_data(file_name, 'unordered_numbers')
-    print(seq)
+    dictt = linear_search(seq,0)
+    print(dictt)
 
 if __name__ == '__main__':
     main()
